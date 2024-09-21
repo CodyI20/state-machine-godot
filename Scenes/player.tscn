@@ -11,3 +11,5 @@
 [node name="Walking" type="Node" parent="FSM"]
 
 [node name="Running" type="Node" parent="FSM"]
+
+[node name="Sliding" type="Node" parent="FSM"]
