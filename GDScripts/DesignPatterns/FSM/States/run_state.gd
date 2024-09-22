@@ -1,19 +1,19 @@
 extends State
 class_name PlayerRun
 
-const EXTRA_SPEED = 450.0
+const SPEED = 500.0
 @onready var player := $"../.."
-@onready var animator := $"../../AnimatedSprite2D"
+@onready var animated_sprite := $"../../AnimatedSprite2D"
 
 func Enter() -> void:
-	animator.play("Running")
+	animated_sprite.play("Running")
 	print_debug("Entering running state...")
 	
 func Exit() -> void:
 	print_debug("Exiting running state...")
 
 func Update(_delta:float) -> void:
-	StateSwitchLogic()
+	pass
 	
 		
 func StateSwitchLogic() -> void:
@@ -23,6 +23,16 @@ func StateSwitchLogic() -> void:
 		state_transition.emit(self, "Idle")
 	if Input.is_action_just_pressed("Jump"):
 		state_transition.emit(self, "Jumping")
+	if !player.is_on_ground():
+		state_transition.emit(self, "Falling")
 
 func Physics_Update(_delta:float) -> void:
-	pass
+	var direction := Input.get_axis("Left","Right")
+	
+	if direction != 0:
+		player.velocity.x = direction * SPEED
+		animated_sprite.flip_h = direction > 0
+	else:
+		player.velocity.x = move_toward(player.velocity.x, 0, SPEED)
+		
+	StateSwitchLogic()
