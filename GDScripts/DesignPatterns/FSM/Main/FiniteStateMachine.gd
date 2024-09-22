@@ -23,12 +23,13 @@ func _physics_process(delta: float) -> void:
 		current_state.Physics_Update(delta)
 
 func on_child_transition(source_state: State, new_state_name: String) -> void:
-	if source_state!=current_state:
+	if source_state != current_state:
 		print_debug("Can't change state as you are now in: " + source_state.name)
 		return
 		
 	var new_state = states.get(new_state_name.to_lower())
 	if !new_state:
+		print_debug("State with name " + new_state_name + " not found!")
 		return
 		
 	if current_state:

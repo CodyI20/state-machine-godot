@@ -14,3 +14,6 @@ func Update(_delta:float) -> void:
 
 func Physics_Update(_delta:float) -> void:
 	pass
+	
+func StateSwitchLogic() -> void:
+	print_debug("Switching state logic activated!")
