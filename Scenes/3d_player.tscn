@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://brd20ltd8oe8h"]
+
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/Main/FiniteStateMachine.gd" id="1_1alta"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/idle_state.gd" id="2_em6qp"]
+
+[node name="3DPlayer" type="Node3D"]
+
+[node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_1alta")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="FSM"]
+script = ExtResource("2_em6qp")
+
+[node name="Jumping" type="Node" parent="FSM"]
+
+[node name="Walking" type="Node" parent="FSM"]
+
+[node name="Running" type="Node" parent="FSM"]
+
+[node name="Sliding" type="Node" parent="FSM"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FSM"]

@@ -1,10 +1,9 @@
-extends Node
-class_name State
-
-signal state_transition
+extends State
+class_name PlayerJump
 
 func Enter() -> void:
-	pass
+	$"../../AnimatedSprite2D".play("Jump")
+	print_debug("Entering jump state...")
 
 func Exit() -> void:
 	pass
@@ -14,3 +13,4 @@ func Update(_delta:float) -> void:
 
 func Physics_Update(_delta:float) -> void:
 	pass
+	

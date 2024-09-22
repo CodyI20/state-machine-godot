@@ -22,8 +22,9 @@ func _physics_process(delta: float) -> void:
 	if current_state:
 		current_state.Physics_Update(delta)
 
-func on_child_transition(state, new_state_name) -> void:
-	if state!=current_state:
+func on_child_transition(source_state: State, new_state_name: String) -> void:
+	if source_state!=current_state:
+		print_debug("Can't change state as you are now in: " + source_state.name)
 		return
 		
 	var new_state = states.get(new_state_name.to_lower())
@@ -31,6 +32,8 @@ func on_child_transition(state, new_state_name) -> void:
 		return
 		
 	if current_state:
-		current_state.exit()
+		current_state.Exit()
 		
-	new_state.enter()
+	new_state.Enter()
+	
+	current_state = new_state
