@@ -23,7 +23,7 @@ func StateSwitchLogic() -> void:
 		state_transition.emit(self, "Idle")
 	if Input.is_action_just_pressed("Jump"):
 		state_transition.emit(self, "Jumping")
-	if !player.is_on_ground():
+	if !player.is_on_floor():
 		state_transition.emit(self, "Falling")
 
 func Physics_Update(_delta:float) -> void:

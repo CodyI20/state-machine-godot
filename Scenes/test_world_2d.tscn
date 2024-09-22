@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch7uvu5r5aq20"]
+[gd_scene load_steps=4 format=3 uid="uid://ch7uvu5r5aq20"]
 
 [ext_resource type="PackedScene" uid="uid://cjulj2ues8m4b" path="res://Scenes/2d_player.tscn" id="1_44eyf"]
+[ext_resource type="PackedScene" uid="uid://bv8o4r7yg1p4j" path="res://Scenes/PlayerUI.tscn" id="2_4e5m2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi6s6"]
 size = Vector2(854, 164)
@@ -19,3 +20,12 @@ polygon = PackedVector2Array(-270, -82, -270, 83, 584, 82, 585, -83)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(157, 0)
 shape = SubResource("RectangleShape2D_vi6s6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerUi" parent="CanvasLayer" instance=ExtResource("2_4e5m2")]
+
+[connection signal="new_state_signal" from="2DPlayer/FSM" to="CanvasLayer/PlayerUi/Panel/StateText" method="ChangeText"]
+
+[editable path="2DPlayer"]
+[editable path="CanvasLayer/PlayerUi"]

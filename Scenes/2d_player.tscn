@@ -320,6 +320,7 @@ animations = [{
 size = Vector2(42, 74)
 
 [node name="2DPlayer" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_hcuds")
 
 [node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
