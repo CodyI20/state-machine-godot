@@ -14,7 +14,7 @@ func Physics_Update(_delta: float):
 	pass
 	
 func StateSwitchLogic():
-	if Input.is_action_just_pressed("Right") or Input.is_action_just_pressed("Left"):
+	if Input.is_action_just_pressed("Right") or Input.is_action_just_pressed("Left") or Input.is_action_just_released("Left") or Input.is_action_just_released("Right"):
 		state_transition.emit(self, "Walking")
 	if Input.is_action_just_pressed("Jump"):
 		state_transition.emit(self, "Jumping")

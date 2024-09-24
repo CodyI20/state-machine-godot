@@ -17,6 +17,8 @@ func Update(_delta:float) -> void:
 	
 		
 func StateSwitchLogic() -> void:
+	if Input.is_action_pressed("Left") and Input.is_action_pressed("Right"):
+		state_transition.emit(self, "Idle")
 	if Input.is_action_pressed("Run"):
 		state_transition.emit(self, "Running")
 	if !Input.is_action_pressed("Left") and !Input.is_action_pressed("Right"):
