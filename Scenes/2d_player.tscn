@@ -211,7 +211,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Jump",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -350,7 +350,9 @@ script = ExtResource("8_jt232")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ergai")
-animation = &"Sliding"
+animation = &"Jump"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 28)
