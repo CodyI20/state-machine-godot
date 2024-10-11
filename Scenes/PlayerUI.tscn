@@ -52,7 +52,7 @@ layout_mode = 2
 offset_right = 222.0
 offset_bottom = 49.0
 bbcode_enabled = true
-text = "[b][u][font_size=35][wave amp=0.5][color=CYAN] STATES LIST"
+text = "[b][u][font_size=35][wave amp=0.75][color=CYAN] STATES LIST"
 fit_content = true
 tab_size = 10
 
@@ -78,7 +78,7 @@ fit_content = true
 [node name="MOVE" type="RichTextLabel" parent="TutorialPanel/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[i]  * MOVE - [color=RED] W,A,S,D/ARROW KEYS"
+text = "[i]  * MOVE - [color=GREEN] W,A,S,D/ARROW KEYS"
 fit_content = true
 
 [node name="RUN" type="RichTextLabel" parent="TutorialPanel/VBoxContainer"]
@@ -90,7 +90,7 @@ fit_content = true
 [node name="JUMP" type="RichTextLabel" parent="TutorialPanel/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[i]  * JUMP - [color=RED] SPACEBAR"
+text = "[i]  * JUMP - [color=GREEN] SPACEBAR"
 fit_content = true
 
 [node name="FALL" type="RichTextLabel" parent="TutorialPanel/VBoxContainer"]
