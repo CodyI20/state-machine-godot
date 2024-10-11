@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="."]
+[node name="StateDisplayPanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -21,7 +21,7 @@ offset_right = 253.0
 offset_bottom = 187.0
 grow_horizontal = 2
 
-[node name="StateText" type="Label" parent="Panel"]
+[node name="StateText" type="Label" parent="StateDisplayPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,3 +33,74 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 script = ExtResource("1_r7ogu")
+
+[node name="TutorialPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.118
+anchor_top = 0.444
+anchor_right = 0.118
+anchor_bottom = 0.444
+offset_left = -110.936
+offset_top = -267.712
+offset_right = 111.064
+offset_bottom = 268.288
+grow_vertical = 2
+
+[node name="TITLE" type="RichTextLabel" parent="TutorialPanel"]
+layout_mode = 2
+offset_right = 222.0
+offset_bottom = 49.0
+bbcode_enabled = true
+text = "[b][u][font_size=35][wave amp=0.5][color=CYAN] STATES LIST"
+fit_content = true
+tab_size = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TutorialPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 98.0
+offset_right = -3.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="IDLE" type="RichTextLabel" parent="TutorialPanel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[i]  * IDLE"
+fit_content = true
+
+[node name="MOVE" type="RichTextLabel" parent="TutorialPanel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[i]  * MOVE - [color=RED] W,A,S,D/ARROW KEYS"
+fit_content = true
+
+[node name="RUN" type="RichTextLabel" parent="TutorialPanel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[i]  * RUN - [color=RED]ONLY WHILE WALKING [color=GREEN] SHIFT"
+fit_content = true
+
+[node name="JUMP" type="RichTextLabel" parent="TutorialPanel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[i]  * JUMP - [color=RED] SPACEBAR"
+fit_content = true
+
+[node name="FALL" type="RichTextLabel" parent="TutorialPanel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[i] * FALLING - [color=RED] ONLY FROM JUMPING - [color=GREEN] No input needed"
+fit_content = true
+
+[node name="LAND" type="RichTextLabel" parent="TutorialPanel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[i]  * LANDING - [color=RED] ONLY FROM FALLING - [color=GREEN] No input needed"
+fit_content = true

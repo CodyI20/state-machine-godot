@@ -25,7 +25,7 @@ shape = SubResource("RectangleShape2D_vi6s6")
 
 [node name="PlayerUi" parent="CanvasLayer" instance=ExtResource("2_4e5m2")]
 
-[connection signal="new_state_signal" from="2DPlayer/FSM" to="CanvasLayer/PlayerUi/Panel/StateText" method="ChangeText"]
+[connection signal="new_state_signal" from="2DPlayer/FSM" to="CanvasLayer/PlayerUi/StateDisplayPanel/StateText" method="ChangeText"]
 
 [editable path="2DPlayer"]
 [editable path="CanvasLayer/PlayerUi"]
